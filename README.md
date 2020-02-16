@@ -1,4 +1,4 @@
-# SpotBook &middot; ![Crows](https://img.shields.io/badge/Made%20with-Crows-black?logo=react&logoColor=white) &middot; ![Tests](https://github.com/TransmissionsDev/spotbook/workflows/Tests/badge.svg)
+# SpotBook &middot; ![Crows](https://img.shields.io/badge/Made%20with-Crows-black?logo=react&logoColor=white) &middot; ![Integration and Unit Tests](https://github.com/TransmissionsDev/spotbook/workflows/Integration%20and%20Unit%20Tests/badge.svg) &middot; ![End-to-End Tests](https://github.com/TransmissionsDev/spotbook/workflows/End-to-End%20Tests/badge.svg)
 
 Find the best skating spots in your area!
 
