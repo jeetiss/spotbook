@@ -1,0 +1,12 @@
+{
+  "imageUrl": "https://media.mnn.com/assets/images/2018/08/CollectionOfCloudsAgainstABlueSky.jpg.653x0_q80_crop-smart.jpg",
+  "name": "Spot Card Test #1",
+  "description": "We are testing the description of this spot.",
+  "popularity": "low",
+  "difficulty": "xtreme",
+  "type": "bump to bar",
+  "lat": 34.03392718052147,
+  "lng": -118.49256201517566,
+  "id": "-M-bZ_7EPDQRDXd8pdA4",
+  "coords": [200, 200]
+}

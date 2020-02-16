@@ -1,0 +1,10 @@
+{
+  "build": {
+    "env": {
+      "REACT_APP_FIREBASE_URL": "@spotbook-firebase-url",
+      "REACT_APP_MAPBOX_API_TOKEN": "@spotbook-mapbox-api-token",
+      "REACT_APP_UPLOADCARE_KEY": "@spotbook-uploadcare-key",
+      "REACT_APP_GOOGLE_STATIC_KEY": "@spotbook-google-static-key"
+    }
+  }
+}
