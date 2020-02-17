@@ -21,7 +21,7 @@ describe("App", function() {
 
     cy.findByText("Submit").click();
 
-    cy.findByText("New Spot Added!").should("be.visible");
+    cy.findByText(/New Spot Added/i).should("be.visible");
 
     cy.getSpotByCoords(...this.spot.coords).click();
 
