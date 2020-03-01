@@ -11,7 +11,7 @@
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "@uploadcare/react-widget": "^1.2.4",
-    "cypress": "^4.0.2",
+    "cypress": "^4.1.0",
     "emotion-theming": "^10.0.27",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
