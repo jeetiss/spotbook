@@ -1,5 +1,5 @@
 import React from "react";
-import { render, wait } from "@testing-library/react";
+import { render, waitForElementToBeRemoved } from "@testing-library/react";
 
 import SpotsNearMe from "./SpotsNearMe";
 
@@ -149,7 +149,7 @@ test("SpotsNearMe opens and closes", async () => {
   expect(closeDrawer).toHaveBeenCalledTimes(1);
 
   // Check that the Drawer Header is NOT there
-  await wait(() =>
-    expect(queryByText("Spots Near You")).not.toBeInTheDocument()
-  );
+  const drawerHeader = queryByText("Spots Near You");
+
+  await waitForElementToBeRemoved(drawerHeader);
 });

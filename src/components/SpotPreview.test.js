@@ -1,5 +1,5 @@
 import React from "react";
-import { render, wait } from "@testing-library/react";
+import { render, waitForElementToBeRemoved } from "@testing-library/react";
 
 import SpotPreview from "./SpotPreview";
 
@@ -91,7 +91,6 @@ test("SpotPreview opens and closes", async () => {
   expect(closeDrawer).toHaveBeenCalledTimes(1);
 
   // Check that the Drawer Header is NOT there
-  await wait(() =>
-    expect(queryByText("Previewing a Spot")).not.toBeInTheDocument()
-  );
+  const drawerHeader = queryByText("Previewing a Spot");
+  await waitForElementToBeRemoved(drawerHeader);
 });

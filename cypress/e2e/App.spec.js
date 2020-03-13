@@ -47,7 +47,7 @@ describe("App", function() {
 
     cy.findByText("Find Spots Near You").click();
     cy.findByText("Spots Near You").should("be.visible");
-    cy.queryByText(/Geolocation/i).should("not.be.visible");
+    cy.findByText(/Geolocation/i).should("not.be.visible");
 
     cy.spotInfoVisible(this.spot);
   });

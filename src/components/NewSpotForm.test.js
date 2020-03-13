@@ -1,5 +1,9 @@
 import React from "react";
-import { render, wait } from "@testing-library/react";
+import {
+  render,
+  waitFor,
+  waitForElementToBeRemoved
+} from "@testing-library/react";
 
 import NewSpotForm from "./NewSpotForm";
 
@@ -95,9 +99,9 @@ test("NewSpotForm opens and closes", async () => {
   expect(closeDrawer).toHaveBeenCalledTimes(1);
 
   // Check that the Drawer Header is NOT there
-  await wait(() =>
-    expect(queryByText("Create a New Spot")).not.toBeInTheDocument()
-  );
+  const drawerHeader = queryByText("Create a New Spot");
+
+  await waitForElementToBeRemoved(drawerHeader);
 });
 
 test("NewSpotForm calls onSubmit with correct details", async () => {
@@ -145,7 +149,7 @@ test("NewSpotForm calls onSubmit with correct details", async () => {
   expect(submitButton).toHaveAttribute("aria-disabled", "true");
 
   // Wait until the picture is UPLOADED and the disabled attribute is REMOVED
-  await wait(() => {
+  await waitFor(() => {
     expect(submitButton).toHaveAttribute("aria-disabled", "false");
   });
 
