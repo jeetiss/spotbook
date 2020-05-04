@@ -17,7 +17,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-ios-pwa-prompt": "^1.6.0",
-    "react-map-gl": "^5.2.3",
+    "react-map-gl": "^5.2.5",
     "react-scripts": "^3.4.0",
     "sort-by-distance": "^1.1.0",
     "swr": "^0.1.18"
