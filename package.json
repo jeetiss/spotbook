@@ -15,7 +15,7 @@
     "emotion-theming": "^10.0.27",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "react": "^16.13.1",
-    "react-dom": "^16.13.0",
+    "react-dom": "^16.13.1",
     "react-ios-pwa-prompt": "^1.7.0",
     "react-map-gl": "^5.2.5",
     "react-scripts": "^3.4.1",
