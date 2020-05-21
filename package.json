@@ -20,7 +20,7 @@
     "react-map-gl": "^5.2.5",
     "react-scripts": "^3.4.1",
     "sort-by-distance": "^1.1.0",
-    "swr": "^0.2.0"
+    "swr": "^0.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
