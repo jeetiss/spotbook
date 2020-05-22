@@ -1,0 +1,41 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  e2e-and-unit:
+    runs-on: ubuntu-16.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run our Cypress E2E tests
+        uses: cypress-io/github-action@v1
+        with:
+          # Passing environment variables here will pass them as Cypress Environment Variables (https://docs.cypress.io/guides/guides/environment-variables.html), and will not be accessible to the start script
+          env: TESTS_FIREBASE_DATABASE=${{ secrets.TESTS_FIREBASE_DATABASE }}
+
+          start: npm start
+          wait-on: "http://localhost:3000"
+
+          record: ${{ contains(github.event_name, 'push') }}
+        env:
+          # These environment variables will be picked up by the start script
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          REACT_APP_FIREBASE_URL: ${{ secrets.REACT_APP_FIREBASE_URL }}
+          REACT_APP_MAPBOX_API_TOKEN: ${{ secrets.REACT_APP_MAPBOX_API_TOKEN }}
+          REACT_APP_UPLOADCARE_KEY: ${{ secrets.REACT_APP_UPLOADCARE_KEY }}
+          REACT_APP_GOOGLE_STATIC_KEY: ${{ secrets.REACT_APP_GOOGLE_STATIC_KEY }}
+
+      - name: Run unit tests with coverage
+        run: npm run unit-test
+        env:
+          CI: true
+
+      - name: Merge our test reports
+        run: npx merge-cypress-jest-coverage
+
+      - name: Upload coverage report to Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
