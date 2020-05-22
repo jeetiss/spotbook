@@ -28,7 +28,7 @@ jobs:
           REACT_APP_GOOGLE_STATIC_KEY: ${{ secrets.REACT_APP_GOOGLE_STATIC_KEY }}
 
       - name: Run unit tests with coverage
-        run: npm run unit-test
+        run: npm run test
         env:
           CI: true
 
