@@ -23,9 +23,9 @@
     "swr": "^0.2.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen --coverage --watchAll=false --coverageDirectory='jest-coverage'",
     "cypress": "cypress open",
     "eject": "react-scripts eject"
   },
@@ -43,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@cypress/instrument-cra": "^1.1.1"
   }
 }
