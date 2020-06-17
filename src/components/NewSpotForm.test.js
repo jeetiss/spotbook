@@ -2,7 +2,7 @@ import React from "react";
 import {
   render,
   waitFor,
-  waitForElementToBeRemoved
+  waitForElementToBeRemoved,
 } from "@testing-library/react";
 
 import NewSpotForm from "./NewSpotForm";
@@ -114,7 +114,7 @@ test("NewSpotForm calls onSubmit with correct details", async () => {
     popularity: "medium",
     type: "kinked rail",
     description: "This is a test for a spot. Ignore this.",
-    ...newSpotLocation
+    ...newSpotLocation,
   };
 
   const { getByLabelText, getByText, getByTestId } = render(
@@ -126,8 +126,6 @@ test("NewSpotForm calls onSubmit with correct details", async () => {
       />
     </ThemeProvider>
   );
-
-  const submitButton = getByTestId("submit-button");
 
   await userEvent.type(getByLabelText("Name of Spot"), newSpot.name);
   await userEvent.type(getByLabelText("Description"), newSpot.description);
@@ -146,21 +144,24 @@ test("NewSpotForm calls onSubmit with correct details", async () => {
   userEvent.click(getByText("Choose a file"));
 
   // Wait until the picture is SELECTED and the disabled attribute is enabled
-  expect(submitButton).toHaveAttribute("aria-disabled", "true");
+  expect(getByTestId("submit-button")).toHaveAttribute("aria-disabled", "true");
 
   // Wait until the picture is UPLOADED and the disabled attribute is REMOVED
   await waitFor(() => {
-    expect(submitButton).toHaveAttribute("aria-disabled", "false");
+    expect(getByTestId("submit-button")).toHaveAttribute(
+      "aria-disabled",
+      "false"
+    );
   });
 
   // Submit the form
-  userEvent.click(submitButton);
+  userEvent.click(getByTestId("submit-button"));
 
   // Make sure onSubmit function was called with correct spot info
   expect(onSubmit).toHaveBeenCalledWith({
     ...newSpot,
     imageUrl:
-      "https://ucarecdn.com/2425c2b5-71f9-4079-b0f2-69bcd03b9173/-/scale_crop/400x400/"
+      "https://ucarecdn.com/2425c2b5-71f9-4079-b0f2-69bcd03b9173/-/scale_crop/400x400/",
   });
 
   // Make sure the close function has been called
