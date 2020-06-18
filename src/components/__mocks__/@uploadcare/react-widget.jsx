@@ -13,7 +13,7 @@ export const Widget = ({ onFileSelect, onChange }) => (
             originalUrl:
               "https://ucarecdn.com/2425c2b5-71f9-4079-b0f2-69bcd03b9173/",
           }),
-        10
+        500
       );
     }}
   >

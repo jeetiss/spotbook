@@ -147,12 +147,12 @@ test("NewSpotForm calls onSubmit with correct details", async () => {
   expect(getByTestId("submit-button")).toHaveAttribute("aria-disabled", "true");
 
   // Wait until the picture is UPLOADED and the disabled attribute is REMOVED
-  await waitFor(() => {
+  await waitFor(() =>
     expect(getByTestId("submit-button")).toHaveAttribute(
       "aria-disabled",
       "false"
-    );
-  });
+    )
+  );
 
   // Submit the form
   userEvent.click(getByTestId("submit-button"));
@@ -166,4 +166,4 @@ test("NewSpotForm calls onSubmit with correct details", async () => {
 
   // Make sure the close function has been called
   expect(closeDrawer).toHaveBeenCalledTimes(1);
-});
+}, 10000);
