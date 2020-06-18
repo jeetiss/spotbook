@@ -166,4 +166,4 @@ test("NewSpotForm calls onSubmit with correct details", async () => {
 
   // Make sure the close function has been called
   expect(closeDrawer).toHaveBeenCalledTimes(1);
-}, 10000);
+}, 20000);
