@@ -9,7 +9,7 @@
     "@testing-library/cypress": "^6.0.0",
     "@testing-library/jest-dom": "^5.10.1",
     "@testing-library/react": "^10.4.3",
-    "@testing-library/user-event": "^12.0.7",
+    "@testing-library/user-event": "^12.0.9",
     "@uploadcare/react-widget": "^1.2.7",
     "@cypress/code-coverage": "^3.8.1",
     "cypress": "^4.9.0",
