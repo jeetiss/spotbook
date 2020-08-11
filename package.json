@@ -19,7 +19,7 @@
     "react-dom": "^16.13.1",
     "react-ios-pwa-prompt": "^1.8.0",
     "react-map-gl": "^5.2.7",
-    "react-scripts": "^3.4.1",
+    "react-scripts": "^3.4.2",
     "sort-by-distance": "^1.1.0",
     "swr": "^0.3.0"
   },
