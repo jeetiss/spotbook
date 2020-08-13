@@ -98,6 +98,14 @@ const NewSpotForm = React.memo(({ newSpotLocation, onSubmit, onClose }) => {
                 <option value="kinked rail">Kinked Rail</option>
                 <option value="pole jam">Pole Jam</option>
                 <option value="gap">Gap</option>
+                <option value="bank">Bank</option>
+                <option value="manual pad">Manual Pad</option>
+                <option value="hubba">Hubba</option>
+                <option value="kicker">Kicker</option>
+                <option value="street quarter">Street Quarter</option>
+                <option value="skatepark">Skatepark</option>
+                <option value="wall ride spot">Wall Ride Spot</option>
+                <option value="handrail">Handrail</option>
               </Select>
             </Box>
 
