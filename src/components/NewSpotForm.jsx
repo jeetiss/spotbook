@@ -106,6 +106,7 @@ const NewSpotForm = React.memo(({ newSpotLocation, onSubmit, onClose }) => {
                 <option value="skatepark">Skatepark</option>
                 <option value="wall ride spot">Wall Ride Spot</option>
                 <option value="handrail">Handrail</option>
+                <option value="school">School</option>
               </Select>
             </Box>
 
