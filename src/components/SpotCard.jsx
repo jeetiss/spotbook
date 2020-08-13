@@ -3,7 +3,7 @@ import React from "react";
 import {
   difficultyToColor,
   popularityToColor,
-  spotPropType
+  spotPropType,
 } from "../utils/SpotUtils";
 
 import { Box, Image, Badge } from "@chakra-ui/core";
@@ -13,7 +13,17 @@ const SpotCard = ({ spot }) => {
   const popularityColor = popularityToColor(spot?.popularity);
 
   return (
-    <Box mt={3} borderWidth="1px" rounded="lg" overflow="hidden">
+    <Box
+      onClick={() =>
+        window.open(
+          `https://www.google.com/maps?layer=c&cbll=${spot.lat},${spot.lng}`
+        )
+      }
+      mt={3}
+      borderWidth="1px"
+      rounded="lg"
+      overflow="hidden"
+    >
       <Image src={spot?.imageUrl} />
       <Box p={3}>
         <Box fontWeight="semibold" fontSize="lg" as="h4" lineHeight="tight">
@@ -55,7 +65,7 @@ const SpotCard = ({ spot }) => {
 };
 
 SpotCard.propTypes = {
-  spot: spotPropType.isRequired
+  spot: spotPropType.isRequired,
 };
 
 export default SpotCard;
