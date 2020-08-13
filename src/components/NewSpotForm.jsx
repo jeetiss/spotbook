@@ -118,7 +118,10 @@ const NewSpotForm = React.memo(({ newSpotLocation, onSubmit, onClose }) => {
               />
             </Box>
             <Box>
-              <FormLabel htmlFor="image">Picture of Spot</FormLabel>
+              <FormLabel htmlFor="image">
+                Picture of Spot (If you don't upload an image, we will get one
+                for you)
+              </FormLabel>
               <Widget
                 id="image"
                 name="image"
