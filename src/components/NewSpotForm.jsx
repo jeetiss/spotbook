@@ -14,7 +14,7 @@ import {
   Input,
   Select,
   DrawerFooter,
-  Button
+  Button,
 } from "@chakra-ui/core";
 
 import { Widget } from "@uploadcare/react-widget";
@@ -44,7 +44,7 @@ const NewSpotForm = React.memo(({ newSpotLocation, onSubmit, onClose }) => {
       type: type.current.value,
       lat: newSpotLocation.lat,
       lng: newSpotLocation.lng,
-      imageUrl
+      imageUrl,
     });
     closeReset();
   };
@@ -114,10 +114,9 @@ const NewSpotForm = React.memo(({ newSpotLocation, onSubmit, onClose }) => {
               <Widget
                 id="image"
                 name="image"
-                tabs="camera file"
                 publicKey={process.env.REACT_APP_UPLOADCARE_KEY}
                 onFileSelect={() => setImageUrl(null)}
-                onChange={upload =>
+                onChange={(upload) =>
                   setImageUrl(upload.originalUrl + "-/scale_crop/400x400/")
                 }
               />
@@ -143,10 +142,10 @@ const NewSpotForm = React.memo(({ newSpotLocation, onSubmit, onClose }) => {
 NewSpotForm.propTypes = {
   newSpotLocation: PropTypes.shape({
     lat: PropTypes.number.isRequired,
-    lng: PropTypes.number.isRequired
+    lng: PropTypes.number.isRequired,
   }),
   onSubmit: PropTypes.func.isRequired,
-  onClose: PropTypes.func.isRequired
+  onClose: PropTypes.func.isRequired,
 };
 
 export default NewSpotForm;
