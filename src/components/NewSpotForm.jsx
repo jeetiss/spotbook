@@ -127,10 +127,19 @@ const NewSpotForm = React.memo(({ newSpotLocation, onSubmit, onClose }) => {
                 id="image"
                 name="image"
                 publicKey={process.env.REACT_APP_UPLOADCARE_KEY}
-                onFileSelect={() => setImageUrl(null)}
+                onFileSelect={(file) => {
+                  if (file == null) {
+                    setImageUrl(undefined)
+                  } else {
+                    setImageUrl(null)
+                  }
+                }}
                 onChange={(upload) =>
                   setImageUrl(upload.originalUrl + "-/scale_crop/400x400/")
                 }
+                imageShrink='1600x1600'
+                imagesOnly
+                clearable
               />
             </Box>
           </Stack>
